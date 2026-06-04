@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omar Morillon · Developer · Data & Tech</title>
-    <meta name="description" content="Portafolio de Omar Morillon — Ingeniería en Sistemas, desarrollo web y pasión por los datos y la tecnología.">
+    <title>Omar Morillon · Data Analyst · BI · Full-Stack</title>
+    <meta name="description" content="Portafolio de Omar Morillon — Ingeniero en Sistemas especializado en Business Intelligence, ingeniería de datos y automatización de procesos.">
     <meta name="color-scheme" content="dark light">
 
     <!-- Fonts -->
@@ -33,6 +33,7 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="#hero" data-i18n="nav.home">Inicio</a></li>
                 <li><a href="#about" data-i18n="nav.about">Sobre mí</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experiencia</a></li>
                 <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
                 <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
@@ -65,23 +66,23 @@
                     <span id="typed-text"></span><span class="cursor">_</span>
                 </h2>
                 <p class="hero-desc" data-i18n="hero.desc">
-                    Ingeniero en Sistemas en formación y desarrollador web, apasionado por convertir
-                    datos en soluciones reales. Construyo interfaces modernas y exploro el mundo de la
-                    tecnología con aprendizaje constante.
+                    Ingeniero en Sistemas especializado en Business Intelligence, ingeniería de datos y
+                    automatización de procesos. Construyo pipelines ETL, plataformas web de automatización
+                    y dashboards ejecutivos que conectan a los equipos técnicos y operativos.
                 </p>
 
                 <div class="hero-stats" id="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num" data-count="12">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label" data-i18n="hero.stat.tech">Tecnologías</span>
+                    </div>
                     <div class="stat">
                         <span class="stat-num" data-count="3">0</span><span class="stat-plus">+</span>
                         <span class="stat-label" data-i18n="hero.stat.projects">Proyectos</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-num" data-count="8">0</span><span class="stat-plus">+</span>
-                        <span class="stat-label" data-i18n="hero.stat.tech">Tecnologías</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-num" data-count="100">0</span><span class="stat-plus">%</span>
-                        <span class="stat-label" data-i18n="hero.stat.passion">Dedicación</span>
+                        <span class="stat-num" data-count="2">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label" data-i18n="hero.stat.exp">Años de experiencia</span>
                     </div>
                 </div>
 
@@ -89,8 +90,8 @@
                     <a href="img/CV_OmarMorillon.pdf" download class="btn btn-primary">
                         <i class="fas fa-download"></i> <span data-i18n="hero.cta.cv">Descargar CV</span>
                     </a>
-                    <a href="#projects" class="btn btn-ghost">
-                        <i class="fas fa-arrow-right"></i> <span data-i18n="hero.cta.work">Ver proyectos</span>
+                    <a href="#experience" class="btn btn-ghost">
+                        <i class="fas fa-arrow-right"></i> <span data-i18n="hero.cta.work">Ver experiencia</span>
                     </a>
                 </div>
 
@@ -109,11 +110,12 @@
                     </div>
                     <pre class="terminal-body"><code><span class="t-prompt">$</span> whoami
 <span class="t-out">Omar Morillon</span>
-<span class="t-prompt">$</span> cat stack.json
+<span class="t-prompt">$</span> cat profile.json
 <span class="t-key">{</span>
-  <span class="t-key">"frontend"</span>: [<span class="t-str">"JS"</span>, <span class="t-str">"HTML5"</span>, <span class="t-str">"CSS3"</span>],
-  <span class="t-key">"backend"</span> : [<span class="t-str">"C#"</span>, <span class="t-str">"MySQL"</span>],
-  <span class="t-key">"focus"</span>   : <span class="t-str">"data & tech"</span>
+  <span class="t-key">"role"</span> : <span class="t-str">"Data Analyst & Dev"</span>,
+  <span class="t-key">"data"</span> : [<span class="t-str">"SQL Server"</span>, <span class="t-str">"Power BI"</span>, <span class="t-str">"Python"</span>],
+  <span class="t-key">"dev"</span>  : [<span class="t-str">"Node.js"</span>, <span class="t-str">"REST APIs"</span>],
+  <span class="t-key">"focus"</span>: <span class="t-str">"BI & automation"</span>
 <span class="t-key">}</span>
 <span class="t-prompt">$</span> <span class="cursor">_</span></code></pre>
                 </div>
@@ -136,22 +138,100 @@
                     </div>
                 </div>
                 <div class="about-text reveal">
-                    <h3 data-i18n="about.subtitle">Desarrollador Web &amp; entusiasta de los datos</h3>
+                    <h3 data-i18n="about.subtitle">Ingeniero en Sistemas · Data, BI &amp; Full-Stack</h3>
                     <p data-i18n="about.p1">
-                        Estudiante de Ingeniería en Sistemas Computacionales en el Instituto Tecnológico
-                        Superior de San Pedro de las Colonias. He participado en proyectos de desarrollo
-                        web con experiencia en tecnologías frontend y backend.
+                        Ingeniero en Sistemas Computacionales especializado en Business Intelligence,
+                        ingeniería de datos y automatización de procesos. Cuento con experiencia comprobada
+                        en entornos corporativos exigentes como CEMEX, integrando múltiples sistemas a
+                        través de SQL Server, REST APIs y Python.
                     </p>
                     <p data-i18n="about.p2">
-                        Me especializo en crear aplicaciones web modernas, responsivas y centradas en el
-                        usuario. Me apasiona la innovación tecnológica, el análisis de datos y el
-                        autoaprendizaje continuo.
+                        Tengo un perfil híbrido entre análisis de datos, BI y desarrollo full-stack. Me
+                        enfoco en recortar horas de trabajo manual mediante automatización de extremo a
+                        extremo y en construir soluciones que aporten valor real al negocio.
                     </p>
                     <ul class="about-facts">
                         <li><i class="fas fa-graduation-cap"></i> <span data-i18n="about.fact1">Ing. en Sistemas Computacionales</span></li>
                         <li><i class="fas fa-map-marker-alt"></i> <span data-i18n="about.fact2">San Pedro de las Colonias, México</span></li>
-                        <li><i class="fas fa-code"></i> <span data-i18n="about.fact3">Frontend &amp; Backend</span></li>
-                        <li><i class="fas fa-chart-line"></i> <span data-i18n="about.fact4">Enfoque en datos y tecnología</span></li>
+                        <li><i class="fas fa-briefcase"></i> <span data-i18n="about.fact3">Data Analyst @ CEMEX (Implant Soltek)</span></li>
+                        <li><i class="fas fa-chart-line"></i> <span data-i18n="about.fact4">BI · ETL · Automatización</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <p class="section-tag reveal" data-i18n="exp.tag">// experiencia</p>
+            <h2 class="section-title reveal" data-i18n="exp.title">Trayectoria profesional</h2>
+            <p class="section-subtitle reveal" data-i18n="exp.subtitle">Roles donde combino datos, BI y desarrollo para automatizar y crear valor.</p>
+
+            <div class="timeline">
+                <article class="timeline-item reveal">
+                    <span class="timeline-dot"></span>
+                    <div class="exp-card">
+                        <div class="exp-head">
+                            <div>
+                                <h3 class="exp-role" data-i18n="exp.job1.role">Analista de Sistemas y Proyectos</h3>
+                                <p class="exp-company" data-i18n="exp.job1.company">Implant Soltek — asignado a CEMEX</p>
+                            </div>
+                            <span class="exp-date current"><span class="status-dot"></span> <span data-i18n="exp.job1.date">Actualidad</span></span>
+                        </div>
+                        <ul class="exp-list">
+                            <li data-i18n="exp.job1.d1">Plataforma de automatización web: diseñé y construí una aplicación (JavaScript, Python, HTML/CSS) que reemplaza el cruce manual de fuentes de datos para monitorear la flota Petradyne en sitios a nivel nacional, eliminando varias horas de trabajo operativo cada semana.</li>
+                            <li data-i18n="exp.job1.d2">Pipeline de normalización de datos: construí un motor que unifica convenciones de nombres inconsistentes entre los sistemas internos de CEMEX, garantizando la integridad de los datos al cruzar múltiples fuentes.</li>
+                            <li data-i18n="exp.job1.d3">Integración de REST APIs: diseño la conexión entre sistemas operativos separados para crear una estructura de datos propietaria, eliminando exportaciones manuales a Excel y habilitando el cruce de datos en tiempo real.</li>
+                            <li data-i18n="exp.job1.d4">Optimización de rendimiento: implementé procesamiento asíncrono (Web Workers) para procesar archivos grandes sin bloquear la interfaz, mejorando la experiencia del usuario final.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="tech-tag">JavaScript</span><span class="tech-tag">Python</span><span class="tech-tag">REST APIs</span><span class="tech-tag">Web Workers</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <span class="timeline-dot"></span>
+                    <div class="exp-card">
+                        <div class="exp-head">
+                            <div>
+                                <h3 class="exp-role" data-i18n="exp.job2.role">Analista de Datos Comercial</h3>
+                                <p class="exp-company">Trayecto</p>
+                            </div>
+                            <span class="exp-date"><span data-i18n="exp.job2.date">Experiencia previa</span></span>
+                        </div>
+                        <ul class="exp-list">
+                            <li data-i18n="exp.job2.d1">Business Intelligence &amp; Logística: lideré la evolución del ecosistema de BI en Power BI (DAX, Power Query) con mapas de calor, análisis de presupuesto vs. ventas y modelos predictivos; integré trazabilidad logística completa (seguimiento de remolques y tractocamiones por viaje).</li>
+                            <li data-i18n="exp.job2.d2">Automatización de facturación (Python): desarrollé un script que lee tickets XML, extrae información clave a Excel, empaqueta el reporte como PDF y lo distribuye automáticamente por correo.</li>
+                            <li data-i18n="exp.job2.d3">Desarrollo full-stack de CRM: rediseñé toda la arquitectura del CRM web corporativo, con backend en Node.js y Python.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">Python</span><span class="tech-tag">Node.js</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Languages & certifications -->
+            <div class="exp-extras">
+                <div class="info-card reveal">
+                    <h3><i class="fas fa-language"></i> <span data-i18n="exp.lang.title">Idiomas</span></h3>
+                    <div class="lang-row">
+                        <span class="lang-name" data-i18n="exp.lang.es">Español</span>
+                        <span class="lang-level" data-i18n="exp.lang.native">Nativo</span>
+                    </div>
+                    <div class="lang-row">
+                        <span class="lang-name" data-i18n="exp.lang.en">Inglés</span>
+                        <span class="lang-level" data-i18n="exp.lang.inter">Intermedio</span>
+                    </div>
+                </div>
+                <div class="info-card reveal">
+                    <h3><i class="fas fa-certificate"></i> <span data-i18n="exp.cert.title">Certificaciones &amp; participación</span></h3>
+                    <ul class="cert-list">
+                        <li><i class="fab fa-google"></i> <span data-i18n="exp.cert.1">Google Cloud Computing Foundations</span></li>
+                        <li><i class="fab fa-docker"></i> <span data-i18n="exp.cert.2">Professional Docker Course</span></li>
+                        <li><i class="fas fa-code"></i> <span data-i18n="exp.cert.3">HackMTY — participante (x2)</span></li>
                     </ul>
                 </div>
             </div>
@@ -162,28 +242,32 @@
     <section id="skills">
         <div class="container">
             <p class="section-tag reveal" data-i18n="skills.tag">// habilidades</p>
-            <h2 class="section-title reveal" data-i18n="skills.title">Stack &amp; dominio</h2>
+            <h2 class="section-title reveal" data-i18n="skills.title">Stack técnico</h2>
             <p class="section-subtitle reveal" data-i18n="skills.subtitle">Tecnologías y herramientas que utilizo, medidas por nivel de dominio.</p>
 
             <div class="skills-layout">
                 <!-- Animated bar charts -->
                 <div class="skills-bars">
                     <div class="skill-group reveal">
-                        <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
-                        <div class="bar-row" data-level="75"><span class="bar-name">HTML5</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
-                        <div class="bar-row" data-level="75"><span class="bar-name">CSS3</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
-                        <div class="bar-row" data-level="70"><span class="bar-name">JavaScript</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <h3><i class="fas fa-database"></i> <span data-i18n="skills.cat.data">Data &amp; BI</span></h3>
+                        <div class="bar-row" data-level="85"><span class="bar-name">Power BI</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="80"><span class="bar-name">SQL Server</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="80"><span class="bar-name">Python</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="75"><span class="bar-name">ETL / Modeling</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
                     </div>
                     <div class="skill-group reveal">
-                        <h3><i class="fas fa-database"></i> Backend &amp; Data</h3>
-                        <div class="bar-row" data-level="45"><span class="bar-name">C#</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
-                        <div class="bar-row" data-level="70"><span class="bar-name">MySQL</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <h3><i class="fas fa-laptop-code"></i> <span data-i18n="skills.cat.dev">Desarrollo</span></h3>
+                        <div class="bar-row" data-level="80"><span class="bar-name">JavaScript</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="70"><span class="bar-name">Node.js</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="75"><span class="bar-name">REST APIs</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="70"><span class="bar-name">HTML / CSS</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
                     </div>
                     <div class="skill-group reveal">
-                        <h3><i class="fas fa-toolbox"></i> Tools</h3>
-                        <div class="bar-row" data-level="70"><span class="bar-name">Git</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
-                        <div class="bar-row" data-level="75"><span class="bar-name">VS Code</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
-                        <div class="bar-row" data-level="45"><span class="bar-name">Figma</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <h3><i class="fas fa-robot"></i> <span data-i18n="skills.cat.auto">Automatización &amp; Tools</span></h3>
+                        <div class="bar-row" data-level="85"><span class="bar-name">Excel avanzado</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="70"><span class="bar-name">Power Automate</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="75"><span class="bar-name">Git / GitHub</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="65"><span class="bar-name">Google Cloud</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
                     </div>
                 </div>
 
@@ -191,9 +275,9 @@
                 <div class="skills-donuts reveal">
                     <h3 data-i18n="skills.top">Top skills</h3>
                     <div class="donut-grid">
-                        <div class="donut" data-value="75"><svg viewBox="0 0 120 120"><circle class="donut-bg" cx="60" cy="60" r="52"></circle><circle class="donut-fg" cx="60" cy="60" r="52"></circle></svg><span class="donut-label">JS<br><b>0%</b></span></div>
-                        <div class="donut" data-value="75"><svg viewBox="0 0 120 120"><circle class="donut-bg" cx="60" cy="60" r="52"></circle><circle class="donut-fg" cx="60" cy="60" r="52"></circle></svg><span class="donut-label">CSS<br><b>0%</b></span></div>
-                        <div class="donut" data-value="70"><svg viewBox="0 0 120 120"><circle class="donut-bg" cx="60" cy="60" r="52"></circle><circle class="donut-fg" cx="60" cy="60" r="52"></circle></svg><span class="donut-label">SQL<br><b>0%</b></span></div>
+                        <div class="donut" data-value="85"><svg viewBox="0 0 120 120"><circle class="donut-bg" cx="60" cy="60" r="52"></circle><circle class="donut-fg" cx="60" cy="60" r="52"></circle></svg><span class="donut-label">Power BI<br><b>0%</b></span></div>
+                        <div class="donut" data-value="80"><svg viewBox="0 0 120 120"><circle class="donut-bg" cx="60" cy="60" r="52"></circle><circle class="donut-fg" cx="60" cy="60" r="52"></circle></svg><span class="donut-label">Python<br><b>0%</b></span></div>
+                        <div class="donut" data-value="80"><svg viewBox="0 0 120 120"><circle class="donut-bg" cx="60" cy="60" r="52"></circle><circle class="donut-fg" cx="60" cy="60" r="52"></circle></svg><span class="donut-label">SQL<br><b>0%</b></span></div>
                     </div>
                 </div>
             </div>
