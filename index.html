@@ -1,212 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Omar Morillon · Developer · Data & Tech</title>
+    <meta name="description" content="Portafolio de Omar Morillon — Ingeniería en Sistemas, desarrollo web y pasión por los datos y la tecnología.">
+    <meta name="color-scheme" content="dark light">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <link rel="stylesheet" href="styles.css">
-    <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-<header>
-    <nav>
-        <div class="logo">My Portfolio</div>
-        <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="nav-right">
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-</header>
+    <!-- Animated data-network background -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-    <!-- Hero Section -->
-<section id="hero">
-    <div class="container">
-        <div class="hero-content">
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="#hero" class="logo">
+                <span class="logo-bracket">&lt;</span>OM<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="#about" data-i18n="nav.about">Sobre mí</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+            <div class="nav-right">
+                <button id="lang-toggle" class="pill-toggle" aria-label="Cambiar idioma">
+                    <span class="lang-current">ES</span>
+                </button>
+                <button id="theme-toggle" class="icon-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="container hero-grid">
             <div class="hero-text">
-                <div class="hero-header">
-                    <h1 class="hero-name">Omar Morillon</h1>
-                    <div class="hero-title-wrapper">
-                        <p class="hero-title">Student and FrontEnd Web Developer</p>
-                        <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/gustavo-omar-morillon-tovar-a653172b5/" target="_blank" class="social-icon">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/OmarMorillon" target="_blank" class="social-icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
+                <p class="hero-eyebrow">
+                    <span class="status-dot"></span>
+                    <span data-i18n="hero.available">Disponible para nuevos proyectos</span>
+                </p>
+                <h1 class="hero-name">Omar Morillon</h1>
+                <h2 class="hero-role">
+                    <span class="mono-accent">&gt;</span>
+                    <span id="typed-text"></span><span class="cursor">_</span>
+                </h2>
+                <p class="hero-desc" data-i18n="hero.desc">
+                    Ingeniero en Sistemas en formación y desarrollador web, apasionado por convertir
+                    datos en soluciones reales. Construyo interfaces modernas y exploro el mundo de la
+                    tecnología con aprendizaje constante.
+                </p>
+
+                <div class="hero-stats" id="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num" data-count="3">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label" data-i18n="hero.stat.projects">Proyectos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num" data-count="8">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label" data-i18n="hero.stat.tech">Tecnologías</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num" data-count="100">0</span><span class="stat-plus">%</span>
+                        <span class="stat-label" data-i18n="hero.stat.passion">Dedicación</span>
                     </div>
                 </div>
-                <p class="hero-subtitle"></p>
+
                 <div class="cta-buttons">
                     <a href="img/CV_OmarMorillon.pdf" download class="btn btn-primary">
-                        <i class="fas fa-download"></i> Download CV
+                        <i class="fas fa-download"></i> <span data-i18n="hero.cta.cv">Descargar CV</span>
                     </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i> Contact Me
+                    <a href="#projects" class="btn btn-ghost">
+                        <i class="fas fa-arrow-right"></i> <span data-i18n="hero.cta.work">Ver proyectos</span>
                     </a>
                 </div>
+
+                <div class="social-icons">
+                    <a href="https://github.com/OmarMorillon" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/gustavo-omar-morillon-tovar-a653172b5/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:omarmorillontovar@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-            <div class="hero-image">
-                <img src="img/perfil.jpg" alt="Omar Morillon" class="hero-profile-img">
+
+            <div class="hero-visual">
+                <div class="terminal-card">
+                    <div class="terminal-head">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="terminal-title">omar@portfolio: ~</span>
+                    </div>
+                    <pre class="terminal-body"><code><span class="t-prompt">$</span> whoami
+<span class="t-out">Omar Morillon</span>
+<span class="t-prompt">$</span> cat stack.json
+<span class="t-key">{</span>
+  <span class="t-key">"frontend"</span>: [<span class="t-str">"JS"</span>, <span class="t-str">"HTML5"</span>, <span class="t-str">"CSS3"</span>],
+  <span class="t-key">"backend"</span> : [<span class="t-str">"C#"</span>, <span class="t-str">"MySQL"</span>],
+  <span class="t-key">"focus"</span>   : <span class="t-str">"data & tech"</span>
+<span class="t-key">}</span>
+<span class="t-prompt">$</span> <span class="cursor">_</span></code></pre>
+                </div>
+                <img src="img/perfil.jpg" alt="Omar Morillon" class="hero-photo">
             </div>
         </div>
-    </div>
-</section>
+        <a href="#about" class="scroll-hint" aria-label="Scroll"><i class="fas fa-chevron-down"></i></a>
+    </section>
 
-    <!-- About Me -->
-    <section id="about" class="white-section">
+    <!-- About -->
+    <section id="about">
         <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-            <p class="section-subtitle fade-in">Learn more about my journey</p>
-            
-            <div class="about-content fade-in">
-                <div class="about-image">
-                    <img src="img/5.jpeg" alt="" class="profile-img">
+            <p class="section-tag reveal" data-i18n="about.tag">// sobre mí</p>
+            <h2 class="section-title reveal" data-i18n="about.title">Quién soy</h2>
+
+            <div class="about-content">
+                <div class="about-image reveal">
+                    <div class="img-frame">
+                        <img src="img/5.jpeg" alt="Omar Morillon" class="profile-img">
+                    </div>
                 </div>
-                <div class="about-text">
-                    <h3>Web Developer</h3>
-                    <p>Student of Computer Systems Engineering at the Higher Technological Institute of San Pedro de las Colonias, where I participated in various development projects focused on web development with experience in frontend and backend technologies. I specialize in creating modern, responsive, and user-centered web applications, passionate about technological innovation and continuous self-learning.</p>
+                <div class="about-text reveal">
+                    <h3 data-i18n="about.subtitle">Desarrollador Web &amp; entusiasta de los datos</h3>
+                    <p data-i18n="about.p1">
+                        Estudiante de Ingeniería en Sistemas Computacionales en el Instituto Tecnológico
+                        Superior de San Pedro de las Colonias. He participado en proyectos de desarrollo
+                        web con experiencia en tecnologías frontend y backend.
+                    </p>
+                    <p data-i18n="about.p2">
+                        Me especializo en crear aplicaciones web modernas, responsivas y centradas en el
+                        usuario. Me apasiona la innovación tecnológica, el análisis de datos y el
+                        autoaprendizaje continuo.
+                    </p>
+                    <ul class="about-facts">
+                        <li><i class="fas fa-graduation-cap"></i> <span data-i18n="about.fact1">Ing. en Sistemas Computacionales</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-i18n="about.fact2">San Pedro de las Colonias, México</span></li>
+                        <li><i class="fas fa-code"></i> <span data-i18n="about.fact3">Frontend &amp; Backend</span></li>
+                        <li><i class="fas fa-chart-line"></i> <span data-i18n="about.fact4">Enfoque en datos y tecnología</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills -->
-    <section id="skills" class="white-section">
+    <section id="skills">
         <div class="container">
-            <h2 class="section-title fade-in">Skills</h2>
-            <p class="section-subtitle fade-in">Technologies and tools I master</p>
-            
-            <div class="skills-grid">
-                <div class="skill-category fade-in">
-                    <h3>Frontend</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">HTML5</span>
-                        <div class="skill-level">
-                            <div class="skill-dots">
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot"></div>
-                                <div class="dot"></div>
-                            </div>
-                            <span class="skill-text">Intermediate</span>
-                        </div>
+            <p class="section-tag reveal" data-i18n="skills.tag">// habilidades</p>
+            <h2 class="section-title reveal" data-i18n="skills.title">Stack &amp; dominio</h2>
+            <p class="section-subtitle reveal" data-i18n="skills.subtitle">Tecnologías y herramientas que utilizo, medidas por nivel de dominio.</p>
+
+            <div class="skills-layout">
+                <!-- Animated bar charts -->
+                <div class="skills-bars">
+                    <div class="skill-group reveal">
+                        <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+                        <div class="bar-row" data-level="75"><span class="bar-name">HTML5</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="75"><span class="bar-name">CSS3</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="70"><span class="bar-name">JavaScript</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
                     </div>
-                    <div class="skill-item">
-                        <span class="skill-name">CSS3</span>
-                        <div class="skill-level">
-                            <div class="skill-dots">
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot"></div>
-                                <div class="dot"></div>
-                            </div>
-                            <span class="skill-text">Intermediate</span>
-                        </div>
+                    <div class="skill-group reveal">
+                        <h3><i class="fas fa-database"></i> Backend &amp; Data</h3>
+                        <div class="bar-row" data-level="45"><span class="bar-name">C#</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="70"><span class="bar-name">MySQL</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
                     </div>
-                    <div class="skill-item">
-                        <span class="skill-name">JavaScript</span>
-                        <div class="skill-level">
-                            <div class="skill-dots">
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot"></div>
-                                <div class="dot"></div>
-                            </div>
-                            <span class="skill-text">Intermediate</span>
-                        </div>
+                    <div class="skill-group reveal">
+                        <h3><i class="fas fa-toolbox"></i> Tools</h3>
+                        <div class="bar-row" data-level="70"><span class="bar-name">Git</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="75"><span class="bar-name">VS Code</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
+                        <div class="bar-row" data-level="45"><span class="bar-name">Figma</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-pct">0%</span></div>
                     </div>
                 </div>
 
-                <div class="skill-category fade-in">
-                    <h3>Backend</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">C#</span>
-                        <div class="skill-level">
-                            <div class="skill-dots">
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot "></div>
-                                <div class="dot "></div>
-                                <div class="dot"></div>
-                            </div>
-                            <span class="skill-text">Basic</span>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">MySQL</span>
-                        <div class="skill-level">
-                            <div class="skill-dots">
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot"></div>
-                                <div class="dot"></div>
-                            </div>
-                            <span class="skill-text">Intermediate</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category fade-in">
-                    <h3>Tools</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">Git</span>
-                        <div class="skill-level">
-                            <div class="skill-dots">
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot "></div>
-                                <div class="dot"></div>
-                            </div>
-                            <span class="skill-text">Intermediate</span>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Figma</span>
-                        <div class="skill-level">
-                            <div class="skill-dots">
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot "></div>
-                                <div class="dot"></div>
-                                <div class="dot"></div>
-                            </div>
-                            <span class="skill-text">Basic</span>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">VS Code</span>
-                        <div class="skill-level">
-                            <div class="skill-dots">
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot active"></div>
-                                <div class="dot "></div>
-                                <div class="dot "></div>
-                            </div>
-                            <span class="skill-text">Intermediate</span>
-                        </div>
+                <!-- Radial donuts for top skills -->
+                <div class="skills-donuts reveal">
+                    <h3 data-i18n="skills.top">Top skills</h3>
+                    <div class="donut-grid">
+                        <div class="donut" data-value="75"><svg viewBox="0 0 120 120"><circle class="donut-bg" cx="60" cy="60" r="52"></circle><circle class="donut-fg" cx="60" cy="60" r="52"></circle></svg><span class="donut-label">JS<br><b>0%</b></span></div>
+                        <div class="donut" data-value="75"><svg viewBox="0 0 120 120"><circle class="donut-bg" cx="60" cy="60" r="52"></circle><circle class="donut-fg" cx="60" cy="60" r="52"></circle></svg><span class="donut-label">CSS<br><b>0%</b></span></div>
+                        <div class="donut" data-value="70"><svg viewBox="0 0 120 120"><circle class="donut-bg" cx="60" cy="60" r="52"></circle><circle class="donut-fg" cx="60" cy="60" r="52"></circle></svg><span class="donut-label">SQL<br><b>0%</b></span></div>
                     </div>
                 </div>
             </div>
@@ -214,108 +201,121 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="white-section">
+    <section id="projects">
         <div class="container">
-            <h2 class="section-title fade-in">Projects</h2>
-            <p class="section-subtitle fade-in">Some of my most outstanding works</p>
-            
+            <p class="section-tag reveal" data-i18n="projects.tag">// proyectos</p>
+            <h2 class="section-title reveal" data-i18n="projects.title">Trabajos destacados</h2>
+            <p class="section-subtitle reveal" data-i18n="projects.subtitle">Una selección de proyectos donde combino código, datos y diseño.</p>
+
             <div class="projects-grid">
-                <div class="project-card fade-in">
+                <article class="project-card reveal">
                     <div class="project-image">
-                        <img src="img/2.jpg" alt="E-Commerce Platform" class="project-img">
+                        <img src="img/2.jpg" alt="Digital Forms" loading="lazy">
+                        <span class="project-badge"><i class="fas fa-database"></i> Data</span>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">Digital Forms Project</h3>
-                        <p class="project-description">Digital solution for electronic forms with automated data processing, SQL database integration, and report export in multiple formats.</p>
+                        <h3 class="project-title" data-i18n="proj.forms.title">Sistema de Formularios Digitales</h3>
+                        <p class="project-description" data-i18n="proj.forms.desc">
+                            Solución digital para formularios electrónicos con procesamiento automatizado
+                            de datos, integración con base de datos SQL y exportación de reportes en
+                            múltiples formatos.
+                        </p>
                         <div class="project-tech">
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Visual Studio</span>
+                            <span class="tech-tag">C#</span><span class="tech-tag">SQL</span><span class="tech-tag">Visual Studio</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/OmarMorillon/Forms-CruzRoja" target="_blank">Code</a>
+                            <a href="https://github.com/OmarMorillon/Forms-CruzRoja" target="_blank" rel="noopener"><i class="fab fa-github"></i> <span data-i18n="proj.code">Código</span></a>
                         </div>
                     </div>
-                </div>
-                
-                <div class="project-card fade-in">
+                </article>
+
+                <article class="project-card reveal">
                     <div class="project-image">
-                        <img src="img/Crypto.jpeg" alt="Task Manager" class="project-img">
+                        <img src="img/Crypto.jpeg" alt="Crypto Quoter" loading="lazy">
+                        <span class="project-badge"><i class="fas fa-chart-line"></i> API</span>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">Cryptocurrency Quoter</h3>
-                        <p class="project-description">Web application for real-time cryptocurrency quotes using API consumption.</p>
+                        <h3 class="project-title" data-i18n="proj.crypto.title">Cotizador de Criptomonedas</h3>
+                        <p class="project-description" data-i18n="proj.crypto.desc">
+                            Aplicación web para cotizar criptomonedas en tiempo real mediante el consumo
+                            de una API externa.
+                        </p>
                         <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">Css</span>
+                            <span class="tech-tag">JavaScript</span><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://cryptomonedasprecio.netlify.app/" target="_blank">View Page</a>
-                            <a href="https://github.com/OmarMorillon/Proyecto_Crypto" target="_blank">Code</a>
+                            <a href="https://cryptomonedasprecio.netlify.app/" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> <span data-i18n="proj.demo">Ver demo</span></a>
+                            <a href="https://github.com/OmarMorillon/Proyecto_Crypto" target="_blank" rel="noopener"><i class="fab fa-github"></i> <span data-i18n="proj.code">Código</span></a>
                         </div>
                     </div>
-                </div>
-                
-                <div class="project-card fade-in">
+                </article>
+
+                <article class="project-card reveal">
                     <div class="project-image">
-                        <img src="img/Recetas.png" alt="Weather App" class="project-img">
+                        <img src="img/Recetas.png" alt="Recipe Finder" loading="lazy">
+                        <span class="project-badge"><i class="fas fa-utensils"></i> Web App</span>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">Food Recipe Finder</h3>
-                        <p class="project-description">Web application for finding food recipes with API consumption.</p>
+                        <h3 class="project-title" data-i18n="proj.recipes.title">Buscador de Recetas</h3>
+                        <p class="project-description" data-i18n="proj.recipes.desc">
+                            Aplicación web para encontrar recetas de comida con consumo de API y una
+                            interfaz limpia y responsiva.
+                        </p>
                         <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">JavaScript</span><span class="tech-tag">CSS3</span><span class="tech-tag">HTML</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://buscadorrecetaspro.netlify.app/" target="_blank">View Page</a>
-                            <a href="https://github.com/OmarMorillon/Proyecto_Recetas_Api" target="_blank">Code</a>
+                            <a href="https://buscadorrecetaspro.netlify.app/" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> <span data-i18n="proj.demo">Ver demo</span></a>
+                            <a href="https://github.com/OmarMorillon/Proyecto_Recetas_Api" target="_blank" rel="noopener"><i class="fab fa-github"></i> <span data-i18n="proj.code">Código</span></a>
                         </div>
                     </div>
-                    
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-<!-- Contact -->
-<section id="contact">
-    <div class="container">
-        <h2 class="section-title fade-in">Contact</h2>
-        
-        <div class="contact-content">
-            <div class="contact-info fade-in">
-                <h3>Contact Information</h3>
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div>
-                        <h4>Email</h4>
-                        <a href="mailto:omarmorillontovar@gmail.com" class="contact-link">omarmorillontovar@gmail.com</a>
-                    </div>
-                </div>
-                <div class="contact-item">
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <p class="section-tag reveal" data-i18n="contact.tag">// contacto</p>
+            <h2 class="section-title reveal" data-i18n="contact.title">Trabajemos juntos</h2>
+            <p class="section-subtitle reveal" data-i18n="contact.subtitle">¿Tienes un proyecto o una oportunidad? Hablemos.</p>
+
+            <div class="contact-cards">
+                <a href="mailto:omarmorillontovar@gmail.com" class="contact-card reveal">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <h4>Email</h4>
+                    <span>omarmorillontovar@gmail.com</span>
+                </a>
+                <a href="https://wa.me/528721313146" target="_blank" rel="noopener" class="contact-card reveal">
                     <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-                    <div>
-                        <h4>WhatsApp</h4>
-                        <a href="https://wa.me/528721313146" class="contact-link">8721313146</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-                    <div>
-                        <h4>LinkedIn</h4>
-                        <a href="https://www.linkedin.com/in/gustavo-omar-morillon-tovar-a653172b5/" 
-                        target="_blank" 
-                        class="contact-link">View my profile</a>
-                    </div>
-                </div>
+                    <h4>WhatsApp</h4>
+                    <span>+52 872 131 3146</span>
+                </a>
+                <a href="https://www.linkedin.com/in/gustavo-omar-morillon-tovar-a653172b5/" target="_blank" rel="noopener" class="contact-card reveal">
+                    <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                    <h4>LinkedIn</h4>
+                    <span data-i18n="contact.linkedin">Ver mi perfil profesional</span>
+                </a>
+                <a href="https://github.com/OmarMorillon" target="_blank" rel="noopener" class="contact-card reveal">
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                    <h4>GitHub</h4>
+                    <span>@OmarMorillon</span>
+                </a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-     <script src="js/main.js"></script>
+    <footer>
+        <p>
+            <span class="logo-bracket">&lt;/&gt;</span>
+            <span data-i18n="footer.text">Diseñado y construido por Omar Morillon</span>
+            · <span id="year"></span>
+        </p>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
