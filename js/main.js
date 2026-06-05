@@ -247,7 +247,7 @@ function animateDonuts(scope) {
   scope.querySelectorAll('.donut').forEach(d => {
     const val = +d.getAttribute('data-value');
     const fg = d.querySelector('.donut-fg');
-    const num = d.querySelector('.donut-label b');
+    const num = d.querySelector('.donut-pct');
     const circ = 2 * Math.PI * 52; // r = 52
     fg.style.strokeDasharray = circ;
     fg.style.strokeDashoffset = circ - (val / 100) * circ;
