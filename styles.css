@@ -302,9 +302,13 @@ section { padding: 7rem 0; position: relative; }
 .t-key { color: var(--accent-2); } .t-str { color: var(--accent); }
 
 .hero-photo {
-  position: absolute; right: -10px; bottom: -34px; width: 130px; height: 130px;
-  object-fit: cover; border-radius: 16px; border: 3px solid var(--bg);
-  box-shadow: 0 16px 40px -12px var(--shadow); z-index: 3;
+  position: absolute; right: -14px; bottom: -30px; width: 150px; height: 150px;
+  object-fit: cover; border-radius: 50%;
+  border: 3px solid var(--bg);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--accent) 55%, var(--accent-2)),
+    0 18px 40px -12px var(--shadow);
+  z-index: 3;
 }
 
 .scroll-hint {
@@ -663,7 +667,7 @@ footer .logo-bracket { color: var(--accent); font-family: 'JetBrains Mono', mono
   .bar-name { font-size: 0.86rem; }
   .contact-cards { grid-template-columns: 1fr; }
   .terminal-body { font-size: 0.68rem; }
-  .hero-photo { width: 104px; height: 104px; bottom: -24px; }
+  .hero-photo { width: 116px; height: 116px; bottom: -22px; right: -8px; }
   .hero-eyebrow { font-size: 0.78rem; }
 }
 
