@@ -374,6 +374,20 @@ section { padding: 7rem 0; position: relative; }
 }
 .exp-role { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; }
 .exp-company { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin-top: 0.15rem; }
+.brand-row { display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap; margin-top: 0.45rem; }
+.brand-sep { color: var(--muted); font-size: 0.85rem; }
+.brandchip {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.5px;
+  font-size: 0.85rem; color: var(--text);
+  background: var(--glass-bg-soft); border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  padding: 0.34rem 0.78rem; border-radius: 9px;
+}
+.brandchip::before {
+  content: ''; width: 13px; height: 13px; border-radius: 4px; flex: none;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
 .exp-date {
   font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--muted);
   background: var(--bg-soft); border: 1px solid var(--border);
